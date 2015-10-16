@@ -2,7 +2,7 @@
 (function(){
 	var isEnabled = true;
 
-	document.querySelector( '.reveal .slides' ).addEventListener( 'mousedown', function( event ) {
+	/*document.querySelector( '.reveal .slides' ).addEventListener( 'mousedown', function( event ) {
 		var modifier = ( Reveal.getConfig().zoomKey ? Reveal.getConfig().zoomKey : 'alt' ) + 'Key';
 
 		var zoomPadding = 20;
@@ -21,22 +21,16 @@
 				pan: false
 			});
 		}
+	} );*/
+
+	var pressTimer;
+
+	document.querySelector( '.reveal .slides').addEventListener( 'mouseup', function ( event ) {
+		clearTimeout(pressTimer);
 	} );
 
-	/*var tapped = false;
-
-	document.querySelector( '.reveal .slides' ).addEventListener( 'click', function ( event ) {
-		if ( !tapped ) {
-			console.log("Dentro do if");
-			tapped = setTimeout( function() {
-				tapped = null;
-			}, 300);
-		} else {
-			console.log("Dentro do else");
-
-			clearTimeout(tapped);
-			tapped = null;
-
+	document.querySelector( '.reveal .slides' ).addEventListener( 'mousedown', function ( event ) {
+		pressTimer = setTimeout( function() {
 			var zoomPadding = 20;
 			var revealScale = Reveal.getScale();
 
@@ -49,21 +43,15 @@
 				height: ( bounds.height * revealScale ) + ( zoomPadding * 2),
 				pan: false
 			});
-		}
+		}, 1000);
+	} );
+
+	document.querySelector( '.reveal .slides').addEventListener( 'touchend', function ( event ) {
+		clearTimeout(pressTimer);
 	} );
 
 	document.querySelector( '.reveal .slides' ).addEventListener( 'touchstart', function ( event ) {
-		if ( !tapped ) {
-			console.log("Dentro do if");
-			tapped = setTimeout( function() {
-				tapped = null;
-			}, 300);
-		} else {
-			console.log("Dentro do else");
-
-			clearTimeout(tapped);
-			tapped = null;
-
+		pressTimer = setTimeout( function() {
 			var zoomPadding = 20;
 			var revealScale = Reveal.getScale();
 
@@ -76,8 +64,8 @@
 				height: ( bounds.height * revealScale ) + ( zoomPadding * 2),
 				pan: false
 			});
-		}
-	} );*/
+		}, 1000);
+	} );
 
 	Reveal.addEventListener( 'overviewshown', function() { isEnabled = false; } );
 	Reveal.addEventListener( 'overviewhidden', function() { isEnabled = true; } );
