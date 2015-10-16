@@ -26,10 +26,13 @@
 	var pressTimer;
 
 	document.querySelector( '.reveal .slides').addEventListener( 'mouseup', function ( event ) {
+		event.preventDefault();
 		clearTimeout(pressTimer);
 	} );
 
 	document.querySelector( '.reveal .slides' ).addEventListener( 'mousedown', function ( event ) {
+		event.preventDefault();
+
 		pressTimer = setTimeout( function() {
 			var zoomPadding = 20;
 			var revealScale = Reveal.getScale();
@@ -47,10 +50,13 @@
 	} );
 
 	document.querySelector( '.reveal .slides').addEventListener( 'touchend', function ( event ) {
+		event.preventDefault();
 		clearTimeout(pressTimer);
 	} );
 
 	document.querySelector( '.reveal .slides' ).addEventListener( 'touchstart', function ( event ) {
+		event.preventDefault();
+
 		pressTimer = setTimeout( function() {
 			var zoomPadding = 20;
 			var revealScale = Reveal.getScale();
