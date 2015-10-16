@@ -23,7 +23,7 @@
 		}
 	} );
 
-	var tapped = false;
+	/*var tapped = false;
 
 	document.querySelector( '.reveal .slides' ).addEventListener( 'click', function ( event ) {
 		if ( !tapped ) {
@@ -77,7 +77,7 @@
 				pan: false
 			});
 		}
-	} );
+	} );*/
 
 	Reveal.addEventListener( 'overviewshown', function() { isEnabled = false; } );
 	Reveal.addEventListener( 'overviewhidden', function() { isEnabled = true; } );
