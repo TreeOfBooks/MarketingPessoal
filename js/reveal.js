@@ -463,6 +463,7 @@
 			'<button class="navigate-left" aria-label="previous slide"></button>' +
 			'<button class="navigate-right" aria-label="next slide"></button>' +
 			'<button class="toogle-fullscreen" aria-label="toogle fullscreen"></button>' +
+			'<button class="toggle-overview" aria-label="toogle overview"</button>' +
 			'<button class="navigate-up" aria-label="above slide"></button>' +
 			'<button class="navigate-down" aria-label="below slide"></button>' );
 
@@ -490,6 +491,7 @@
 		dom.controlsPrev = toArray( document.querySelectorAll( '.navigate-prev' ) );
 		dom.controlsNext = toArray( document.querySelectorAll( '.navigate-next' ) );
 		dom.controlsFullScreen = toArray( document.querySelectorAll ( '.toogle-fullscreen' ) );
+		dom.controlsToggleOverview = toArray( document.querySelectorAll ('.toggle-overview') );
 
 		dom.statusDiv = createStatusDiv();
 	}
@@ -1014,6 +1016,7 @@
 			dom.controlsPrev.forEach( function( el ) { el.addEventListener( eventName, onNavigatePrevClicked, false ); } );
 			dom.controlsNext.forEach( function( el ) { el.addEventListener( eventName, onNavigateNextClicked, false ); } );
 			dom.controlsFullScreen.forEach( function( el ) { el.addEventListener (eventName, onFullScreenClicked, false ); } );
+			dom.controlsToggleOverview.forEach( function( el ) {el.addEventListener (eventName, onToggleOverviewClicked, false); } );
 		} );
 
 	}
@@ -1059,6 +1062,7 @@
 			dom.controlsPrev.forEach( function( el ) { el.removeEventListener( eventName, onNavigatePrevClicked, false ); } );
 			dom.controlsNext.forEach( function( el ) { el.removeEventListener( eventName, onNavigateNextClicked, false ); } );
 			dom.controlsFullScreen.forEach( function( el ) { el.addEventListener (eventName, onFullScreenClicked, false ); } );
+			dom.controlsToggleOverview.forEach( function( el ) {el.addEventListener (eventName, onToggleOverviewClicked, false); } );
 		} );
 
 	}
@@ -3700,6 +3704,14 @@
 
 	}
 
+	function enterOverview() {
+		if ( dom.overlay ) {
+			closeOverlay();
+		} else {
+			toggleOverview();
+		}
+	}
+
 	function navigateLeft() {
 
 		// Reverse for RTL
@@ -4202,7 +4214,8 @@
 	function onNavigateDownClicked( event ) { event.preventDefault(); onUserInput(); navigateDown(); }
 	function onNavigatePrevClicked( event ) { event.preventDefault(); onUserInput(); navigatePrev(); }
 	function onNavigateNextClicked( event ) { event.preventDefault(); onUserInput(); navigateNext(); }
-	function onFullScreenClicked( event ) { event.preventDefault();	onUserInput(); enterFullscreen(); }	
+	function onFullScreenClicked( event ) { event.preventDefault();	onUserInput(); enterFullscreen(); }
+	function onToggleOverviewClicked( event ) {event.preventDefault(); onUserInput(); enterOverview(); }
 
 	/**
 	 * Handler for the window level 'hashchange' event.
