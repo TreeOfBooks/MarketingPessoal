@@ -66,17 +66,32 @@ $(document).ready(function() {
 	}
 
 	$('#complementary-add').click(addComplementary);
+	
 
 	$('#academic-button').click(function() {
-		$('#personal-data').detach();
-		$('#curriculum-form').append(experienceData);
+		$('#personal-data').addClass('animated fadeOutRight')
+						   .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
+						   		$('#personal-data').remove();
+						   		$('#actual-form').append(experienceData);
+						   		$('#experience-data').addClass('animated fadeInUp')
+						   							 .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
+						   							 	$('#experience-data').removeClass('animated fadeInUp');
+						   							 });
+						   });
 	});
 
 	$('#professional-button').click(function() {
-		$('#experience-data').detach();
-		$('#curriculum-form').append(professionalData);
+		$('#experience-data').addClass('animated fadeOutRight')
+							 .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
+							 	$('#experience-data').remove();
+							 	$('#actual-form').append(professionalData);
+							 	$('#professional-data').addClass('animated fadeInUp')
+							 						   .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
+							 						   		$('#professional-data').removeClass('animated fadeInUp');
+							 						   });
+							 });
 	});
 
-	var experienceData = $('#experience-data').detach(),
+	var experienceData   = $('#experience-data').detach(),
 		professionalData = $('#professional-data').detach();
 });
