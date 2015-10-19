@@ -192,36 +192,36 @@ h1 {
 
 .haste_sumario img {
     position: absolute;
-    left: -24px;
+    left: 10px;
 }
 
 
 .haste_sumario img:first-child {
-    top: 40px;
+    top: 39px;
 }
 
 .haste_sumario img:nth-child(2) {
-    top: 135px;
+    top: 165px;
 }
 
 .haste_sumario img:nth-child(3) {
-    top: 230px;
+    top: 290px;
 }
 
 .haste_sumario img:nth-child(4) {
-    top: 325px;
-}
-
-.haste_sumario img:nth-child(5) {
     top: 420px;
 }
 
+.haste_sumario img:nth-child(5) {
+    top: 550px;
+}
+
 .haste_sumario img:nth-child(6) {
-    top: 515px;
+    top: 680px;
 }
 
 .haste_sumario img:nth-child(7) {
-    top: 540px;
+    top: 810px;
 }
 
 
@@ -263,7 +263,7 @@ h1 {
     border: none;
     border-bottom: 2px dotted #b0bec5;
     width: 200px;
-    left: -70px;
+    left: -50px;
 
 }
 
@@ -272,23 +272,23 @@ h1 {
 }
 
 #cap02 hr {
-    top: 195px;
+    top: 225px;
 }
 
 #cap03 hr {
-    top: 290px;
+    top: 350px;
 }
 
 #cap04 hr {
-    top: 385px;
-}
-
-#cap05 hr {
     top: 480px;
 }
 
+#cap05 hr {
+    top: 610px;
+}
+
 #cap06 hr {
-    top: 575px;
+    top: 740px;
 }
 
 #cap01 div, #cap02 div, #cap03 div, #cap04 div, #cap05 div, #cap06 div  {
@@ -301,7 +301,7 @@ h1 {
     padding-top: 0.5em;
     line-height: 95%;
     z-index: 1;
-    left: 140px;
+    left: 150px;
 }
 
 
@@ -317,7 +317,7 @@ h1 {
 }
 
 #cap02 div {
-    top: 170px;
+    top: 200px;
     background: url(img/label02.png) no-repeat;
     color: #ffb300;
 }
@@ -329,7 +329,7 @@ h1 {
 
 
 #cap03 div {
-    top: 265px;
+    top: 325px;
     background: url(img/label03.png) no-repeat;
     color: #00acc1;
 }
@@ -340,7 +340,7 @@ h1 {
 }
 
 #cap04 div {
-    top: 360px;
+    top: 455px;
     background: url(img/label04.png) no-repeat;
     color: #546e7a;
 }
@@ -351,7 +351,7 @@ h1 {
 }
 
 #cap05 div {
-    top: 455px;
+    top: 585px;
     background: url(img/label05.png) no-repeat;
     color: #ff7043;
 }
@@ -362,7 +362,7 @@ h1 {
 }
 
 #cap06 div {
-    top: 550px;
+    top: 715px;
     background: url(img/label06.png) no-repeat;
     color: #8645bd;
 }
@@ -378,7 +378,7 @@ h1 {
 }
 
 .box_chapter {
-    background: url(img/bg_haste.png) repeat-y 0 0;
+    background: url(img/bg_haste.png) repeat-y 34px 0;
     height: 100%;
 }
 
@@ -388,13 +388,13 @@ h1 {
 }
 
 .chamada_cap {
-    padding-bottom: 1em;
+    padding: 1em 0;
 }
 
 .header_cap img {
     position: absolute;
-    top: 1.5em;
-    left: -1.5em;
+    top: 15px;
+    left: 10px;
     max-width: none;
 }
 
@@ -457,7 +457,8 @@ h1 {
 .texto_ativd {
     font-family: 'robotolight';
     color: #6f6f6f;
-    line-height: 125%;
+    line-height: 140%;
+    font-size: 14px;
 }
 
 .body_ativd {
@@ -802,7 +803,6 @@ h4 {
     left: 621px;
 }
 
-<<<<<<< HEAD
 .lista_dicas {
     position: relative;
 }
@@ -832,7 +832,7 @@ h4 {
     width: 221px;
     height: 167px;
     background: url(img/bg_dica06.png) no-repeat;
-    top: 10px;
+    top: 20px;
     left: 50%;
     margin-left: -110px;
 }
@@ -842,7 +842,7 @@ h4 {
     height: 95px;
     background: url(img/bg_dica01.png) no-repeat;
     top: 220px;
-    left: 40px;
+    left: -10px;
 }
 
 .lista_dicas li:nth-child(4) {
@@ -850,7 +850,7 @@ h4 {
     height: 89px;
     background: url(img/bg_dica02.png) no-repeat;
     top: 350px;
-    left: 60px;
+    left: -10px;
 }
 
 .lista_dicas li:nth-child(5) {
@@ -858,7 +858,7 @@ h4 {
     height: 122px;
     background: url(img/bg_dica05.png) no-repeat;
     top: 120px;
-    right: 50px;
+    right: -10px;
     padding: 3%;
 }
 
@@ -876,7 +876,7 @@ h4 {
     height: 174px;
     background: url(img/bg_dica04.png) no-repeat;
     top: 255px;
-    right: 40px;
+    right: -10px;
 }
 
 .desc_cap04, .desc_cap04 p {
@@ -1046,11 +1046,6 @@ h4 {
     margin-top: 5px;
 }
 
-.form_curriculo {
-    height: 480px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
 
 .mais_form img {
     position: relative;
@@ -1071,4 +1066,14 @@ h3 {
 
 .box_elab {
     margin: 30px 0;
+}
+
+.page_motion {
+    padding-left: 35px;
+}
+
+.txtpontos {
+    font-size: 14px;
+    padding-left: 45px;
+    margin-top: 10px;
 }
