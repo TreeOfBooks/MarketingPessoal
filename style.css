@@ -1077,3 +1077,9 @@ h3 {
     padding-left: 45px;
     margin-top: 10px;
 }
+
+#actual-form {
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+}

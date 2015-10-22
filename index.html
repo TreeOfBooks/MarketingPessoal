@@ -32,6 +32,9 @@
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<![endif]-->
+        <script type="text/javascript" src="lib/js/filesaver.min.js"></script>
+        <script text="text/javascript" src="lib/js/jspdf.js"></script>
+        <script type="text/javascript" src="lib/js/jspdf.plugin.standard_fonts_metrics.js"></script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -976,22 +979,22 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                     <div class="row">
                                                         <div class="small-4 columns">
                                                             <label>Nome Completo
-                                                                <input type="text" placeholder="Nome Completo" />
+                                                                <input name="nome"type="text" placeholder="Nome Completo" />
                                                             </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Nacionalidade
-                                                                <input type="text" placeholder="Nacionalidade" />
+                                                                <input name="nacionalidade" type="text" placeholder="Nacionalidade" />
                                                             </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Idade
-                                                                <input type="text" placeholder="Idade" />
+                                                                <input name="idade" type="text" placeholder="Idade" />
                                                             </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Estado civil
-                                                                <select>
+                                                                <select name="estadoCivil">
                                                                   <option value="Solteiro">Solteiro</option>
                                                                   <option value="Casado">Casado</option>
                                                                   <option value="Divorciado">Divorciado</option>
@@ -1001,27 +1004,27 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Número de Filhos
-                                                                <input type="number" placeholder="Número de filhos" />
+                                                                <input name="filhos" type="number" placeholder="Número de filhos" />
                                                             </label>
                                                         </div>
                                                         <div class="small-5 columns">
                                                             <label>Endereço
-                                                                <input type="text" placeholder="Endereço" />
+                                                                <input name="endereco" type="text" placeholder="Endereço" />
                                                             </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                           <label>Telefone
-                                                            <input type="tel" placeholder="Telefone" />
+                                                            <input name="telefone" type="tel" placeholder="Telefone" />
                                                           </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                           <label>Celular
-                                                            <input type="tel" placeholder="Celular" />
+                                                            <input name="celular" type="tel" placeholder="Celular" />
                                                           </label>
                                                         </div>
                                                         <div class="small-3 columns">
                                                           <label>E-mail
-                                                            <input type="email" placeholder="E-mail" />
+                                                            <input name="email" type="email" placeholder="E-mail" />
                                                           </label>
                                                         </div>
                                                     </div>
@@ -1031,7 +1034,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                 <div class="small-11 columns small-centered">
                                                     <h3>Objetivo</h3>
                                                     <label>Objetivo
-                                                        <textarea placeholder="Consiste na indicação da posição que deseja ocupar. Procure personalizar o currículo para cada empresa. Você também pode destacar aspectos profissionais que o qualificam para ocupar o cargo pretendido"></textarea>
+                                                        <textarea name="objetivo" placeholder="Consiste na indicação da posição que deseja ocupar. Procure personalizar o currículo para cada empresa. Você também pode destacar aspectos profissionais que o qualificam para ocupar o cargo pretendido"></textarea>
                                                     </label>
                                                 </div>
                                             </div>
@@ -1052,7 +1055,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                     <div id="idiom-template">
                                                         <div class="small-3 columns">
                                                           <label>Idioma
-                                                            <select>
+                                                            <select name="idioma-nome">
                                                               <option value="Inglês">Inglês</option>
                                                               <option value="Espanho">Espanhol</option>
                                                               <option value="Francês">Francês</option>
@@ -1063,7 +1066,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>
                                                         <div class="small-2 columns">
                                                           <label>Compreende
-                                                            <select>
+                                                            <select name="idioma-compreende">
                                                               <option value="Bem">Bem</option>
                                                               <option value="Razoavelmente">Razoavelmente</option>
                                                               <option value="Pouco">Pouco</option>
@@ -1072,7 +1075,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>
                                                         <div class="small-2 columns">
                                                           <label>Fala
-                                                            <select>
+                                                            <select name="idioma-fala">
                                                               <option value="Bem">Bem</option>
                                                               <option value="Razoavelmente">Razoavelmente</option>
                                                               <option value="Pouco">Pouco</option>
@@ -1081,7 +1084,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>
                                                         <div class="small-2 columns">
                                                           <label>Lê
-                                                            <select>
+                                                            <select name="idioma-leitura">
                                                               <option value="Bem">Bem</option>
                                                               <option value="Razoavelmente">Razoavelmente</option>
                                                               <option value="Pouco">Pouco</option>
@@ -1090,7 +1093,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>
                                                         <div class="small-2 columns">
                                                           <label>Escreve
-                                                            <select>
+                                                            <select name="idioma-escrita">
                                                               <option value="Bem">Bem</option>
                                                               <option value="Razoavelmente">Razoavelmente</option>
                                                               <option value="Pouco">Pouco</option>
@@ -1111,7 +1114,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                      <div id="academics-template">   
                                                         <div class="small-2 columns">
                                                             <label>Nível
-                                                                <select>
+                                                                <select name="ensino-nivel">
                                                                   <option value="Doutorado">Doutorado</option>
                                                                   <option value="Mestrado">Mestrado</option>
                                                                   <option value="Especialização">Especialização</option>
@@ -1122,7 +1125,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Status
-                                                                <select>
+                                                                <select name="ensino-status">
                                                                   <option value="Completo">Completo</option>
                                                                   <option value="Incompleto">Incompleto</option>
                                                                   <option value="Cursando">Cursando</option>
@@ -1131,17 +1134,17 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         </div>  
                                                         <div class="small-3 columns">
                                                             <label>Curso / Área
-                                                                <input type="text" placeholder="Curso" />
+                                                                <input name="ensino-curso"type="text" placeholder="Curso" />
                                                             </label>  
                                                         </div>
                                                         <div class="small-3 columns">
                                                             <label>Universidade
-                                                                <input type="text" placeholder="Universidade" />
+                                                                <input name="ensino-universidade" type="text" placeholder="Universidade" />
                                                             </label>  
                                                         </div>
                                                         <div class="small-1 columns">
                                                             <label>Conclusão
-                                                                <input type="number" placeholder="Ano" />
+                                                                <input name="ensino-conclusao" type="number" placeholder="Ano" />
                                                             </label>  
                                                         </div>
                                                         <div class="small-1 columns mais_form">
@@ -1167,27 +1170,27 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                     <div id="professional-experience-template">
                                                         <div class="small-3 columns">
                                                             <label>Empresa
-                                                                <input type="text" placeholder="Empresa" />
+                                                                <input name="empresa" type="text" placeholder="Empresa" />
                                                             </label>
                                                         </div>
                                                         <div class="small-3 columns">
                                                             <label>Cargo
-                                                                <input type="text" placeholder="Cargo" />
+                                                                <input name="cargo" type="text" placeholder="Cargo" />
                                                             </label>
                                                         </div>
                                                         <div class="small-1 columns">
                                                             <label>Início
-                                                                <input type="datetime" placeholder="Mês/Ano" />
+                                                                <input name="periodo-inicio" type="datetime" placeholder="Mês/Ano" />
                                                             </label>
                                                         </div>
                                                         <div class="small-1 columns">
                                                             <label>Fim
-                                                                <input type="datetime" placeholder="Mês/Ano" />
+                                                                <input name="periodo-fim" type="datetime" placeholder="Mês/Ano" />
                                                             </label>
                                                         </div>
                                                         <div class="small-3 columns">
                                                             <label>Observação
-                                                                <input type="text" placeholder="Observação" />
+                                                                <input name="trabalho-observacao" type="text" placeholder="Observação" />
                                                             </label>
                                                         </div>
                                                         <div class="small-1 columns mais_form">
@@ -1204,22 +1207,22 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                     <div id="complementary-template">
                                                         <div class="small-4 columns">
                                                             <label>Curso
-                                                                <input type="text" placeholder="Nome do curso" />
+                                                                <input name="complementar-curso" type="text" placeholder="Nome do curso" />
                                                             </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Carga horária
-                                                                <input type="number" placeholder="Carga horária" />
+                                                                <input name="complementar-horas" type="number" placeholder="Carga horária" />
                                                             </label>
                                                         </div>
                                                         <div class="small-2 columns">
                                                             <label>Realização
-                                                                <input type="text" placeholder="Realização" />
+                                                                <input name="complementar-periodo" type="text" placeholder="Realização" />
                                                             </label>
                                                         </div>
                                                         <div class="small-3 columns">
                                                             <label>Observação
-                                                                <input type="text" placeholder="Observação" />
+                                                                <input name="complementar-observacao"type="text" placeholder="Observação" />
                                                             </label>
                                                         </div>
                                                         <div class="small-1 columns mais_form">
@@ -1237,12 +1240,12 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                                         <div class="row">
                                                             <div class="small-9 columns">
                                                                 <label>Cidade
-                                                                    <input type="text" placeholder="Cidade" />
+                                                                    <input name="cidade" type="text" placeholder="Cidade" />
                                                                 </label>
                                                             </div>
                                                             <div class="small-3 columns ">
                                                                 <label>Data
-                                                                    <input type="datetime" placeholder="Data" />
+                                                                    <input name="data" type="datetime" placeholder="Data" />
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -1252,7 +1255,7 @@ alguns pontos devem ser considerados na elaboração do currículo. </p>
                                         </div>
                                         <div class="row">
                                             <div class="small-3 columns small-centered">
-                                                <a href="#" class="button radius small">GERAR CURRÍCULO</a>
+                                                <a id="gerar-curriculo" class="button radius small">GERAR CURRÍCULO</a>
                                             </div>
                                         </div>
                                     </div>                                    
