@@ -1083,3 +1083,16 @@ h3 {
     overflow-y: scroll;
     overflow-x: hidden; 
 }
+
+#first {
+    left: -45%;
+}
+
+#second {
+    left: -13%;
+}
+
+#third {
+    left: -30%;
+}
+
