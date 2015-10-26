@@ -110,10 +110,9 @@ $(document).ready(function() {
 						   		$('#actual-form').append(experienceData);
 						   		$('#experience-data').addClass('animated fadeInUp')
 						   							 .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
-						   							 	var button = $('#experience-data').children('#professional-button').detach();
-						   							 	$(button).appendTo('.form_curriculo');
-						   							 	console.log($(button));
+						   							 	var button = $('#professional-button').detach();
 
+						   							 	$('.form_curriculo').append("<center></center>").children("center").append($(button));
 						   							 	$('#experience-data').removeClass('animated fadeInUp');
 
 						   							 });
@@ -121,6 +120,10 @@ $(document).ready(function() {
 	});
 
 	$('#professional-button').click(function() {
+		$('.form_curriculo').children('center').children('#professional-button').addClass('animated fadeOutRight')
+							.one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
+								$(this).remove();
+							});
 		$('#experience-data').addClass('animated fadeOutRight')
 							 .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
 							 	var idiom = [],
@@ -161,11 +164,13 @@ $(document).ready(function() {
 							 		idiomas: idiom,
 							 		formacao: academic
 							 	};
-
+							 	
 							 	$('#experience-data').remove();
 							 	$('#actual-form').append(professionalData);
 							 	$('#professional-data').addClass('animated fadeInUp')
 							 						   .one('webKitAnimationEnd mozAnimationEnd MSAnimationEnd onanimationend animationend', function() {
+							 						   		var button = $('#gerar-curriculo').detach();
+							 						   		$('.form_curriculo').children('center').append($(button))
 							 						   		$('#professional-data').removeClass('animated fadeInUp');
 							 						   });
 							 });

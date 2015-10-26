@@ -129,4 +129,97 @@ $(document).ready(function() {
     	}
 
     });
+
+   /* $('a.open-chart').click(function() {
+        // Definição do chart
+       var data = {
+        "responsive": true,
+        "labels": ["January", "February", "March", "April", "May", "June", "July", "August", "November", "December"],
+        "datasets": [{
+            label: "Sodium intake",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [165, 159, 180, 181, 156, 155, 140]
+        }, {
+            label: "Sugar intake",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [128, 148, 140, 119, 186, 127, 190]
+        }]
+    }
+
+    var context =  $('#answers-chart').get(0).getContext('2d'),
+        chart = new Chart(context).Line(data); 
+    });*/
+});
+
+$(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+  var modal = $(this);
+
+  if ($(modal).is('#modal-chart')) {
+     var data = [
+        {
+            value: 300,
+            color:"#F7464A",
+            highlight: "#FF5A5E",
+            label: "#1"
+        },
+        {
+            value: 50,
+            color: "#46BFBD",
+            highlight: "#5AD3D1",
+            label: "#2"
+        },
+        {
+            value: 100,
+            color: "#FDB45C",
+            highlight: "#FFC870",
+            label: "#3"
+        },
+        {
+            value: 250,
+            color: "#ADE45C",
+            highlight: "#AFC870",
+            label: "#4"
+        },
+        {
+            value: 50,
+            color: "#BA045F",
+            highlight: "#BA0870",
+            label: "#5"
+        }
+    ]
+
+    var context =  $('#answers-chart').get(0).getContext('2d'),
+        chart = new Chart(context).Doughnut(data);
+
+    var answer =$('input[name="radio-answer"]:checked', '#sec02A-form').val();
+     if(answer) {
+        var color;
+        if (answer === '#1') {
+            color = "#F7464A";
+        } else if (answer === '#2') {
+            color = "#46BFBD";
+        } else if (answer === '#3') {
+            color = "#FDB45C";
+        } else if (answer === '#4') {
+            color = "#ADE45C";
+        } else {
+            color = "#BA045F";
+        }
+
+        $('#answer').html('Sua resposta: ' + answer).css('color', color);
+    } else {
+        $('#answer').html('Você não respondeu!').css('color', 'red');
+    }
+    
+  } 
 });

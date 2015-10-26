@@ -35,6 +35,7 @@
         <script type="text/javascript" src="lib/js/filesaver.min.js"></script>
         <script text="text/javascript" src="lib/js/jspdf.js"></script>
         <script type="text/javascript" src="lib/js/jspdf.plugin.standard_fonts_metrics.js"></script>
+        <script type="text/javascript" src="lib/js/Chart.js"></script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -317,40 +318,70 @@
                                 <div class="row">
                                     <br><br><br>
                                     <div class="fragment fade-in small-12 columns">
-                                        <form>
+                                        <form id="sec02A-form">
                                             <ul class="small-block-grid-1">
                                                 <li>
-                                                    <input type="radio">
+                                                    <input name="radio-answer" value="#1" type="radio">
                                                         Capacidade individual de ir ao encontro de nichos de mercado dispostos a contratá-lo;
                                                     </input>
                                                 </li>
                                                 <li>
-                                                    <input type="radio">
+                                                    <input name="radio-answer" value="#2" type="radio">
                                                         Capacidade de buscar informações e rapidamente processá-las, transformando-as em conhecimento, gerando resultados concretos;
                                                     </input>
                                                 </li>
                                                 <li>
-                                                    <input type="radio">
+                                                    <input name="radio-answer" value="#3" type="radio">
                                                         Capacidade de formar e manter relacionamentos interpessoais de qualidade, em relações comerciais e pessoais do tipo ganha-ganha;
                                                     </input>
                                                 </li>
                                                 <li>
-                                                    <input type="radio">
+                                                    <input name="radio-answer" value="#4" type="radio">
                                                         Pró-atividade; Pensamento sistêmico, visão do todo;
                                                     </input>
                                                 </li>
                                                 <li>
-                                                    <input type="radio">
+                                                    <input name="radio-answer" value="#5" type="radio">
                                                         Flexibilidade e rapidez de raciocínio.
                                                     </input>
-                                                </li>
-                                            </ul>
+                                                </li>                                                
+                                            </ul>                                            
                                             <div class="row">
                                                  <div class="small-12 small-centered columns">   
-                                                    <center><a class="button radius small" data-reveal-id="modal-greeting">ENVIAR RESPOSTA</a></center>
+                                                    <center><a class="button radius small open-chart" data-reveal-id="modal-chart">ENVIAR RESPOSTA</a></center>
                                                 </div>
                                             </div>
                                         </form>
+                                        <div id="modal-chart" class="reveal-modal" data-reveal arialabelledby="chart-title" aria-hidden="true" role="dialog">
+                                                <h2 id="chart-title">Confira as estatísticas</h2>
+                                                <div class="row">
+                                                    <div class="small-6 columns">
+                                                        <canvas id="answers-chart" width="400" height="400"></canvas>
+                                                    </div>
+                                                    <div class="small-6 columns">
+                                                        <ul class="smallblock-grid-1">
+                                                            <li>            
+                                                                <p style="color: #F7464A ">#1 Capacidade individual de ir ao encontro de nichos de mercado dispostos a contratá-lo</p>
+                                                            </li>
+                                                            <li>
+                                                                <p style="color: #46BFBD">#2  Capacidade de buscar informações e rapidamente processá-las, transformando-as em conhecimento, gerando resultados concretos</p>
+                                                            </li>
+                                                            <li>
+                                                                <p style="color: #FDB45C">#3 Capacidade de formar e manter relacionamentos interpessoais de qualidade, em relações comerciais e pessoais do tipo ganha-ganha</p>
+                                                            </li>
+                                                            <li>
+                                                                <p style="color: #ADE45C">#4 Pró-atividade; Pensamento sistêmico, visão do todo</p>
+                                                            </li>
+                                                            <li>
+                                                                <p style="color: #BA045F">#5 Flexibilidade e rapidez de raciocínio</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <center><p id="answer"><b>#</b></p></center>
+                                                <center><p><b>Obrigado pela sua resposta!</b></p></center>
+                                                <a class="close-reveal-modal" aria-label="Fechar">&#215;</a>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
